@@ -1,0 +1,26 @@
+<h1>Consumo Web Services</h1>
+
+<p>Este componente consume los servicios del RESP API.</p>
+
+<p *ngIf="!estudiantes"><em>Cargando...</em></p>
+
+<table class='table' *ngIf="estudiantes">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Credito</th>
+            <th>Beca</th>
+            <th>Tipo de Pago</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let estudiante of estudiantes">
+            <td>{{ estudiante.nombre }}</td>
+            <td>{{ estudiante.apellido }}</td>
+            <td>{{ estudiante.credito }}</td>
+            <td>{{ estudiante.beca? "Si" : "No" }}</td>
+            <td>{{ estudiante.tipopago }}</td>
+        </tr>
+    </tbody>
+</table>
